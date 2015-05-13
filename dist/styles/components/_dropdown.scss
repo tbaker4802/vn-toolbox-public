@@ -1,0 +1,26 @@
+.th-dropdown {
+
+	.vn-placeholder {
+		margin-left: -10px;
+	}
+
+	.btn {
+		text-align: left;
+	}
+
+	&-toggle {
+		margin-left : 5px;
+		margin-top  : -3px;
+	}
+
+	.dropdown-toggle{
+		text-align: left;
+		text-transform: uppercase;
+	}
+}
+
+.th-dropdown.open {
+	button.btn-default.dropdown-toggle {
+		background: none;
+	}
+}

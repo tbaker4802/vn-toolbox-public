@@ -1,0 +1,77 @@
+.th-my-account,
+.th-checkout{
+
+  .list-group{
+	margin        : 10px 0px 10px 0px;
+	border-radius : 2px;
+	box-shadow    : 0px 3px 1px -2px rgba(0,0,0,0.1),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+
+	.list-group-item{
+		padding      : 20px;
+		margin-left  : 0;
+		margin-right : 0;
+
+		[data-vn-address-display]{
+			cursor: default;
+		}
+
+		&.-clickable{
+
+			&:hover{
+				cursor: pointer;
+				background-color: #F6F6F6;
+			}
+		}
+	}
+
+	  .panel-heading{
+		  border-bottom: 0;
+	  }
+
+		//For select lists
+		.list-group-item.-radio{
+
+	  &:hover{
+		cursor: pointer;
+		background-color: #F6F6F6;
+	  }
+
+			.row{
+				padding-left: 30px;
+			}
+
+			input{
+				display: none !important;
+
+				&:checked {
+					+ div {
+						&:before {
+							content     : '\f192';
+							font-family : 'FontAwesome';
+						}
+					}
+				}
+			}
+
+			> div{
+
+				&:before {
+					content        : '\f10c';
+					font-family    : 'FontAwesome';
+					font-size      : 16px;
+					display        : inline-block;
+					line-height    : 18px;
+					vertical-align : middle;
+					text-align     : center;
+					color          : #000;
+					margin-right   : 5px;
+					font-weight    : normal;
+					position       : absolute;
+					top            : 50%;
+					margin-top     : -9px;
+				}
+			}
+		}
+
+	}
+}

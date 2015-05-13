@@ -1,0 +1,40 @@
+#shopping-cart .th-cart{
+
+	&__login{
+
+		.th-cart__body{
+			overflow-y: auto;
+			height: 100%;
+			height: calc(100% - 40px);
+			height: -webkit-calc(100% - 40px);
+			height: -moz-calc(100% - 40px);
+			margin-top: 40px;
+			padding-bottom: 20px;
+		}
+
+		.th-login{
+			margin: 20px 0;
+
+			&__form{
+				margin: 10px 0;
+			}
+		}
+
+		&__btn-back{
+
+			.fa{
+				font-size: 10px;
+				vertical-align: middle;
+			}
+			span{
+				vertical-align: middle;
+			}
+		}
+
+		.th__title{
+			line-height: 1.5;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+	}
+}
