@@ -17,239 +17,11 @@
 	opacity : 1;
 }
 
-.snap-drawers{
-	overflow: hidden;
-}
-
 .inline-block-wrap{
 	font-size: 0px;
 
 	> *{
 		font-size: 12px;
-	}
-}
-@-webkit-keyframes animateCartIn {
-	0% {
-		right: -300px;
-		z-index: 9;
-	}
-	99%{
-		right: 0px;
-	}
-	100% {
-		right: 0px;
-		z-index: 9;
-	}
-}
-@-moz-keyframes animateCartIn {
-	0% {
-		right: -300px;
-		z-index: 9;
-	}
-	99%{
-		right: 0px;
-	}
-	100% {
-		right: 0px;
-		z-index: 9;
-	}
-}
-@-o-keyframes animateCartIn {
-	0% {
-		right: -300px;
-		z-index: 9;
-	}
-	99%{
-		right: 0px;
-	}
-	100% {
-		right: 0px;
-		z-index: 9;
-	}
-}
-@keyframes animateCartIn {
-	0% {
-		right: -300px;
-		z-index: 9;
-	}
-	99%{
-		right: 0px;
-	}
-	100% {
-		right: 0px;
-		z-index: 9;
-	}
-}
-
-@-webkit-keyframes animateCartOut {
-	0% {
-		right: 0px;
-		z-index: 9;
-	}
-	99%{
-		right: -300px;
-	}
-	100% {
-		right: -300px;
-		z-index: -1;
-	}
-}
-@-moz-keyframes animateCartOut {
-	0% {
-		right: 0px;
-		z-index: 9;
-	}
-	99%{
-		right: -300px;
-	}
-	100% {
-		right: -300px;
-		z-index: -1;
-	}
-}
-@-o-keyframes animateCartOut {
-	0% {
-		right: 0px;
-		z-index: 9;
-	}
-	99%{
-		right: -300px;
-	}
-	100% {
-		right: -300px;
-		z-index: -1;
-	}
-}
-@keyframes animateCartOut {
-	0% {
-		right: 0px;
-		z-index: 9;
-	}
-	99%{
-		right: -300px;
-	}
-	100% {
-		right: -300px;
-		z-index: -1;
-	}
-}
-
-@-webkit-keyframes animateOverlayIn {
-	0% {
-		opacity: 0;
-		z-index: -1;
-	}
-	1%{
-		z-index: 8;
-	}
-	99%{
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-		z-index: 8;
-	}
-}
-@-moz-keyframes animateOverlayIn {
-	0% {
-		opacity: 0;
-		z-index: -1;
-	}
-	1%{
-		z-index: 8;
-	}
-	99%{
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-		z-index: 8;
-	}
-}
-@-o-keyframes animateOverlayIn {
-	0% {
-		opacity: 0;
-		z-index: -1;
-	}
-	1%{
-		z-index: 8;
-	}
-	99%{
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-		z-index: 8;
-	}
-}
-@keyframes animateOverlayIn {
-	0% {
-		opacity: 0;
-		z-index: -1;
-	}
-	1%{
-		z-index: 8;
-	}
-	99%{
-		opacity: 1;
-	}
-	100% {
-		opacity: 1;
-		z-index: 8;
-	}
-}
-
-
-@-webkit-keyframes animateOverlayOut {
-	0% {
-		opacity: 1;
-		z-index: 8;
-	}
-	99%{
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-		z-index: -1;
-	}
-}
-@-moz-keyframes animateOverlayOut {
-	0% {
-		opacity: 1;
-		z-index: 8;
-	}
-	99%{
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-		z-index: -1;
-	}
-}
-@-o-keyframes animateOverlayOut {
-	0% {
-		opacity: 1;
-		z-index: 8;
-	}
-	99%{
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-		z-index: -1;
-	}
-}
-@keyframes animateOverlayOut {
-	0% {
-		opacity: 1;
-		z-index: 8;
-	}
-	99%{
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-		z-index: -1;
 	}
 }
 
@@ -258,17 +30,16 @@
 	&__panel{
 		background-color : $body-bg;
 		border-left      : 1px solid $hr-border;
-		position         : absolute;
 		height           : 100%;
 		width            : 300px;
-		right            : -300px;
-		z-index          : -1;
 		overflow         : hidden;
-		box-shadow       : 0px 0px 5px 2px rgba(0,0,0,.1);
+		position: fixed;
+		top: 0;
+		right: -350px;
+		z-index: 1001;
+		transition: right .4s;
 
 		@include respond-to(xs){
-			width : 100%;
-			right : -100%;
 
 			&__overlay{
 				display : none;
@@ -277,41 +48,31 @@
 	}
 
 	&__overlay{
-		position           : absolute;
-		top                : 0px;
-		right              : 0px;
-		width              : 100%;
-		height             : 100%;
-		background-color   : rgba(0,0,0,.5);
-		cursor             : default;
-		opacity            : 0;
+		position         : fixed;
+		top              : 0;
+		left             : 0;
+		background-color : rgba(0,0,0,.5);
+		cursor           : default;
+		opacity          : 0;
+		transition       : opacity .4s;
 	}
 
 	&--open{
 
 		.th-cart__panel{
-		  -webkit-animation-name      : animateCartIn;
-		  -webkit-animation-duration  : .5s;
-		  -webkit-animation-fill-mode : forwards; /* Chrome, Safari, Opera */
-		  -moz-animation-name         : animateCartIn;
-		  -moz-animation-duration     : .5s;
-		  -moz-animation-fill-mode    : forwards;
-		  animation-name              : animateCartIn;
-		  animation-duration          : .5s;
-		  animation-fill-mode         : forwards;
+			right : 0;
+
+			@media (max-width: $screen-sm) {
+				width : 100%;
+			}
 		}
 
 		@media (min-width: $screen-sm) {
 			.th-cart__overlay {
-				-webkit-animation-name: animateOverlayIn;
-				-webkit-animation-duration: .5s;
-				-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
-				-moz-animation-name: animateOverlayIn;
-				-moz-animation-duration: .5s;
-				-moz-animation-fill-mode: forwards;
-				animation-name: animateOverlayIn;
-				animation-duration: .5s;
-				animation-fill-mode: forwards;
+				right: 0;
+				bottom: 0;
+				opacity: 1;
+				z-index: 1000;
 			}
 		}
 	}
@@ -319,21 +80,11 @@
 	&--closed{
 
 	  .th-cart__panel{
-		-webkit-animation-name     : animateCartOut;
-		-webkit-animation-duration : .5s;
-		-moz-animation-name         : animateCartOut;
-		-moz-animation-duration     : .5s;
-		animation-name             : animateCartOut;
-		animation-duration         : .5s;
+		right: -350px;
 	  }
 	  @media (min-width: $screen-sm){
 		.th-cart__overlay{
-		  -webkit-animation-name      : animateOverlayOut;
-		  -webkit-animation-duration  : .5s;
-		  -moz-animation-name         : animateOverlayOut;
-		  -moz-animation-duration     : .5s;
-		  animation-name              : animateOverlayOut;
-		  animation-duration          : .5s;
+		  right: -100%;
 		}
 	  }
 	}
@@ -343,12 +94,11 @@
 	}
 
 	&__body {
-		overflow-y : auto;
-		height     : 100%;
-		height     : calc(100% - 190px);
-		height     : -webkit-calc(100% - 190px);
-		height     : -moz-calc(100% - 190px);
-		margin-top : 40px;
+		position: absolute;
+		top: 40px;
+		bottom: 145px;
+		overflow-y: auto;
+		width: 100%;
 
 		&--overlay {
 			@extend %font-smoothing;
@@ -890,17 +640,15 @@
 	#shopping-cart .th-cart{
 
 		&__brand{
-			position: fixed;
+			position: static;
 			width: 100%;
 		}
 		&__header{
-			position: fixed;
-			top: 46px;
+			position: static;
 		}
 		&__body{
-			height: auto !important;
-			overflow-y: auto !important;
-			margin-top: 85px !important;
+			position: static;
+			height: auto;
 			min-height: 200px;
 		}
 		&__panel{

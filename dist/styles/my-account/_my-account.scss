@@ -1,3 +1,15 @@
+.vn-page-my-account{
+	#main-content-area{
+
+		@media(max-width: $screen-md){
+			padding-top: 95px;
+		}
+		@media(max-width: $screen-sm){
+			padding-top: 66px;
+		}
+	}
+}
+
 .th-my-account {
 	font-weight : 300;
 	font-size   : 16px;
